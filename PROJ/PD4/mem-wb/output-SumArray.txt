@@ -1,4 +1,4 @@
-WARNING: mem-wb.v:60: $readmemh(../../rv32-benchmarks-master/simple-programs/SumArray.x): Not enough words in the file for the requested range [0:262143].
+WARNING: mem-wb.v:79: $readmemh(../../rv32-benchmarks-master/simple-programs/SumArray.x): Not enough words in the file for the requested range [0:262143].
 VCD info: dumpfile mem-wb-SumArray.vcd opened for output.
 sp:	0x010fffff
  

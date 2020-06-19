@@ -12,6 +12,10 @@
 `define READ 0
 `define WRITE 1
 
+`define WR_WORD		2'b00
+`define WR_HALFW	2'b01
+`define WR_BYTE		2'b10
+
 // main memory component
 module mainmem (
 	input clock,
@@ -19,7 +23,8 @@ module mainmem (
 	input [31:0] data_in,
 	output [31:0] data_out,
 	input read_write,
-	input load_instrs); 
+	input load_instrs,
+	input [1:0] wr_width); 
 
 	wire read_write;
 	wire [31:0] address;
@@ -42,11 +47,25 @@ module mainmem (
 	end
 
 	// write mode
-    always @(posedge clock) begin
+    // always @(posedge clock) begin
+    //     if (read_write == `WRITE) begin
+    //         mem[address - `STARTING_ADDR + 3] <= data_in[31:24];
+    //         mem[address - `STARTING_ADDR + 2] <= data_in[23:16];
+    //         mem[address - `STARTING_ADDR + 1] <= data_in[15:8];
+    //         mem[address - `STARTING_ADDR] <= data_in[7:0];
+    //     end
+	// end
+	always @(posedge clock) begin
         if (read_write == `WRITE) begin
-            mem[address - `STARTING_ADDR + 3] <= data_in[31:24];
-            mem[address - `STARTING_ADDR + 2] <= data_in[23:16];
-            mem[address - `STARTING_ADDR + 1] <= data_in[15:8];
+			if (wr_width == `WR_WORD) begin
+				mem[address - `STARTING_ADDR + 3] <= data_in[31:24];
+				mem[address - `STARTING_ADDR + 2] <= data_in[23:16];
+			end
+
+			if (wr_width == `WR_WORD || wr_width == `WR_HALFW) begin
+				mem[address - `STARTING_ADDR + 1] <= data_in[15:8];
+			end
+
             mem[address - `STARTING_ADDR] <= data_in[7:0];
         end
 	end
@@ -90,8 +109,14 @@ module register(
 	assign data_rs1 = regfile[addr_rs1];
 	assign data_rs2 = regfile[addr_rs2];
 
+	integer sp_initial_occurences = 0;
 	always @(regfile[2]) begin
 		$display("sp:\t0x%8h", regfile[2]);
+
+		if (regfile[2] == `MEM_DEPTH_BYTES + `STARTING_ADDR - 1)
+			sp_initial_occurences += 1;
+		if (sp_initial_occurences == 2)
+			$finish; 
 	end
 
 	always @(posedge clock) begin
@@ -282,7 +307,8 @@ module stage_fetch (
 		.data_in(32'hXXXXXXXX),
 		.data_out(instr_out),
 		.read_write(1'b0),
-		.load_instrs(1'b1));
+		.load_instrs(1'b1),
+		.wr_width(`WR_WORD));
 endmodule // stage_fetch
 
 /*========================================================================================*/
@@ -735,7 +761,7 @@ module stage_memory(
 	input			clock,
 	input [31:0]	pc,
 	input [31:0]	alu,
-	input [31:0]	data_rs2,
+	input [31:0]	mem_in,
 	input			mem_rw,
 	input [1:0]		wb_sel,
 	input [31:0]	instr,
@@ -745,11 +771,16 @@ module stage_memory(
 	reg [31:0] wb;
 	wire [31:0] mem_out;
 
+	reg [1:0] wr_width;
+	reg [31:0] mem_out_masked;
+
 	assign instr_out = instr;
 	
-	always @(pc or alu or mem_out or wb_sel) begin
+	// always @(pc or alu or mem_out or wb_sel) begin
+	always @(pc or alu or mem_out_masked or wb_sel) begin
 		if (wb_sel == 2) begin
-			wb <= mem_out;
+			// wb <= mem_out;
+			wb <= mem_out_masked;
 		end
 		else if (wb_sel == 1) begin
 			wb <= alu;
@@ -759,13 +790,51 @@ module stage_memory(
 		end
 	end
 
+	// adjust for LB, LH, LW, LBU, LHU, SB, SH, SW
+	wire [6:0] opcode;
+	wire [2:0] funct3;
+
+	assign opcode = instr[6:0];
+	assign funct3 = instr[14:12];
+
+	always @(instr or mem_out) begin
+		if (opcode == 7'b0000011) begin
+			wr_width <= `WR_WORD;
+			if (funct3 == 3'b000)		// LB
+				mem_out_masked <= { {24{mem_out[7]}}, mem_out[7:0] };
+			else if (funct3 == 3'b001)	// LH
+				mem_out_masked <= { {16{mem_out[7]}}, mem_out[7:0] };
+			else if (funct3 == 3'b100)	// LBU
+				mem_out_masked <= { {24{1'b0}}, mem_out[7:0] };
+			else if (funct3 == 3'b101)	// LHU
+				mem_out_masked <= { {16{1'b0}}, mem_out[15:0] };
+			else						// LW
+				mem_out_masked <= mem_out;
+		end
+		else if (opcode == 7'b0100011) begin
+			mem_out_masked <= mem_out;
+			if (funct3 == 3'b000)		// SB
+				wr_width <= `WR_BYTE;
+			else if (funct3 == 3'b001)	// SH
+				wr_width <= `WR_HALFW;
+			else						// SW
+				wr_width <= `WR_WORD;
+		end
+		else begin
+			wr_width <= `WR_WORD;
+			mem_out_masked <= mem_out;
+		end
+	end
+
 	mainmem dmem(
 		.clock(clock),
 		.address(alu),
-		.data_in(data_rs2),
+		.data_in(mem_in),
 		.data_out(mem_out),
 		.read_write(mem_rw),
-		.load_instrs(1'b0));
+		.load_instrs(1'b0),
+		.wr_width(wr_width));
+		// .wr_width(`WR_WORD));
 endmodule // stage_memory
 
 /*========================================================================================*/
@@ -870,7 +939,7 @@ module dut;
 		.clock(clock),
 		.pc(pc),
 		.alu(alu),
-		.data_rs2(data_rs2),
+		.mem_in(data_rs2),
 		.mem_rw(mem_rw),
 		.wb_sel(wb_sel),
 		.instr(instr_mem),
