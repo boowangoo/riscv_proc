@@ -1,0 +1,314 @@
+WARNING: reg-exec.v:58: $readmemh(../../rv32-benchmarks-master/simple-programs/SumArray.x): Not enough words in the file for the requested range [0:262143].
+VCD info: dumpfile reg-exec-SumArray.vcd opened for output.
+ 
+time: 10	pc: 0x01000000	instr: 0xfc010113	addi	x2, x2, -64
+data_rs1: 0x00000002	data_rs2: 0x00000000
+alu: 0xffffffc2
+ 
+time: 30	pc: 0x01000004	instr: 0x02112e23	sw	x1, 60(x2)
+data_rs1: 0xffffffc2	data_rs2: 0x00000001
+alu: 0xfffffffe
+ 
+time: 50	pc: 0x01000008	instr: 0x02012623	sw	x0, 44(x2)
+data_rs1: 0xffffffc2	data_rs2: 0x00000000
+alu: 0xffffffee
+ 
+time: 70	pc: 0x0100000c	instr: 0x02012423	sw	x0, 40(x2)
+data_rs1: 0xffffffc2	data_rs2: 0x00000000
+alu: 0xffffffea
+ 
+time: 90	pc: 0x01000010	instr: 0x02012623	sw	x0, 44(x2)
+data_rs1: 0xffffffc2	data_rs2: 0x00000000
+alu: 0xffffffee
+ 
+time: 110	pc: 0x01000014	instr: 0x0280006f	jal	x0, 0x0100003c
+data_rs1: 0x00000000	data_rs2: 0x00000008
+alu: 0x0100003c
+ 
+time: 130	pc: 0x0100003c	instr: 0x02c12703	lw	x14, 44(x2)
+data_rs1: 0xffffffc2	data_rs2: 0x0000000c
+alu: 0xffffffee
+ 
+time: 150	pc: 0x01000040	instr: 0x00900793	addi	x15, x0, 9
+data_rs1: 0x00000000	data_rs2: 0x00000009
+alu: 0x00000009
+ 
+time: 170	pc: 0x01000044	instr: 0xfce7dae3	bge	x15, x14, 0x01000018
+data_rs1: 0x00000009	data_rs2: 0xffffffee
+alu: 0x01000018
+ 
+time: 190	pc: 0x01000018	instr: 0x02c12783	lw	x15, 44(x2)
+data_rs1: 0xffffffc2	data_rs2: 0x0000000c
+alu: 0xffffffee
+ 
+time: 210	pc: 0x0100001c	instr: 0x00279793	slli	x15, x15, 0x2
+data_rs1: 0xffffffee	data_rs2: 0xffffffc2
+alu: 0xffffffb8
+ 
+time: 230	pc: 0x01000020	instr: 0x03010713	addi	x14, x2, 48
+data_rs1: 0xffffffc2	data_rs2: 0x00000010
+alu: 0xfffffff2
+ 
+time: 250	pc: 0x01000024	instr: 0x00f707b3	add	x15, x14, x15
+data_rs1: 0xfffffff2	data_rs2: 0xffffffb8
+alu: 0xffffffaa
+ 
+time: 270	pc: 0x01000028	instr: 0x02c12703	lw	x14, 44(x2)
+data_rs1: 0xffffffc2	data_rs2: 0x0000000c
+alu: 0xffffffee
+ 
+time: 290	pc: 0x0100002c	instr: 0xfce7a823	sw	x14, -48(x15)
+data_rs1: 0xffffffaa	data_rs2: 0xffffffee
+alu: 0xffffff7a
+ 
+time: 310	pc: 0x01000030	instr: 0x02c12783	lw	x15, 44(x2)
+data_rs1: 0xffffffc2	data_rs2: 0x0000000c
+alu: 0xffffffee
+ 
+time: 330	pc: 0x01000034	instr: 0x00178793	addi	x15, x15, 1
+data_rs1: 0xffffffee	data_rs2: 0x00000001
+alu: 0xffffffef
+ 
+time: 350	pc: 0x01000038	instr: 0x02f12623	sw	x15, 44(x2)
+data_rs1: 0xffffffc2	data_rs2: 0xffffffef
+alu: 0xffffffee
+ 
+time: 370	pc: 0x0100003c	instr: 0x02c12703	lw	x14, 44(x2)
+data_rs1: 0xffffffc2	data_rs2: 0x0000000c
+alu: 0xffffffee
+ 
+time: 390	pc: 0x01000040	instr: 0x00900793	addi	x15, x0, 9
+data_rs1: 0x00000000	data_rs2: 0x00000009
+alu: 0x00000009
+ 
+time: 410	pc: 0x01000044	instr: 0xfce7dae3	bge	x15, x14, 0x01000018
+data_rs1: 0x00000009	data_rs2: 0xffffffee
+alu: 0x01000018
+ 
+time: 430	pc: 0x01000018	instr: 0x02c12783	lw	x15, 44(x2)
+data_rs1: 0xffffffc2	data_rs2: 0x0000000c
+alu: 0xffffffee
+ 
+time: 450	pc: 0x0100001c	instr: 0x00279793	slli	x15, x15, 0x2
+data_rs1: 0xffffffee	data_rs2: 0xffffffc2
+alu: 0xffffffb8
+ 
+time: 470	pc: 0x01000020	instr: 0x03010713	addi	x14, x2, 48
+data_rs1: 0xffffffc2	data_rs2: 0x00000010
+alu: 0xfffffff2
+ 
+time: 490	pc: 0x01000024	instr: 0x00f707b3	add	x15, x14, x15
+data_rs1: 0xfffffff2	data_rs2: 0xffffffb8
+alu: 0xffffffaa
+ 
+time: 510	pc: 0x01000028	instr: 0x02c12703	lw	x14, 44(x2)
+data_rs1: 0xffffffc2	data_rs2: 0x0000000c
+alu: 0xffffffee
+ 
+time: 530	pc: 0x0100002c	instr: 0xfce7a823	sw	x14, -48(x15)
+data_rs1: 0xffffffaa	data_rs2: 0xffffffee
+alu: 0xffffff7a
+ 
+time: 550	pc: 0x01000030	instr: 0x02c12783	lw	x15, 44(x2)
+data_rs1: 0xffffffc2	data_rs2: 0x0000000c
+alu: 0xffffffee
+ 
+time: 570	pc: 0x01000034	instr: 0x00178793	addi	x15, x15, 1
+data_rs1: 0xffffffee	data_rs2: 0x00000001
+alu: 0xffffffef
+ 
+time: 590	pc: 0x01000038	instr: 0x02f12623	sw	x15, 44(x2)
+data_rs1: 0xffffffc2	data_rs2: 0xffffffef
+alu: 0xffffffee
+ 
+time: 610	pc: 0x0100003c	instr: 0x02c12703	lw	x14, 44(x2)
+data_rs1: 0xffffffc2	data_rs2: 0x0000000c
+alu: 0xffffffee
+ 
+time: 630	pc: 0x01000040	instr: 0x00900793	addi	x15, x0, 9
+data_rs1: 0x00000000	data_rs2: 0x00000009
+alu: 0x00000009
+ 
+time: 650	pc: 0x01000044	instr: 0xfce7dae3	bge	x15, x14, 0x01000018
+data_rs1: 0x00000009	data_rs2: 0xffffffee
+alu: 0x01000018
+ 
+time: 670	pc: 0x01000018	instr: 0x02c12783	lw	x15, 44(x2)
+data_rs1: 0xffffffc2	data_rs2: 0x0000000c
+alu: 0xffffffee
+ 
+time: 690	pc: 0x0100001c	instr: 0x00279793	slli	x15, x15, 0x2
+data_rs1: 0xffffffee	data_rs2: 0xffffffc2
+alu: 0xffffffb8
+ 
+time: 710	pc: 0x01000020	instr: 0x03010713	addi	x14, x2, 48
+data_rs1: 0xffffffc2	data_rs2: 0x00000010
+alu: 0xfffffff2
+ 
+time: 730	pc: 0x01000024	instr: 0x00f707b3	add	x15, x14, x15
+data_rs1: 0xfffffff2	data_rs2: 0xffffffb8
+alu: 0xffffffaa
+ 
+time: 750	pc: 0x01000028	instr: 0x02c12703	lw	x14, 44(x2)
+data_rs1: 0xffffffc2	data_rs2: 0x0000000c
+alu: 0xffffffee
+ 
+time: 770	pc: 0x0100002c	instr: 0xfce7a823	sw	x14, -48(x15)
+data_rs1: 0xffffffaa	data_rs2: 0xffffffee
+alu: 0xffffff7a
+ 
+time: 790	pc: 0x01000030	instr: 0x02c12783	lw	x15, 44(x2)
+data_rs1: 0xffffffc2	data_rs2: 0x0000000c
+alu: 0xffffffee
+ 
+time: 810	pc: 0x01000034	instr: 0x00178793	addi	x15, x15, 1
+data_rs1: 0xffffffee	data_rs2: 0x00000001
+alu: 0xffffffef
+ 
+time: 830	pc: 0x01000038	instr: 0x02f12623	sw	x15, 44(x2)
+data_rs1: 0xffffffc2	data_rs2: 0xffffffef
+alu: 0xffffffee
+ 
+time: 850	pc: 0x0100003c	instr: 0x02c12703	lw	x14, 44(x2)
+data_rs1: 0xffffffc2	data_rs2: 0x0000000c
+alu: 0xffffffee
+ 
+time: 870	pc: 0x01000040	instr: 0x00900793	addi	x15, x0, 9
+data_rs1: 0x00000000	data_rs2: 0x00000009
+alu: 0x00000009
+ 
+time: 890	pc: 0x01000044	instr: 0xfce7dae3	bge	x15, x14, 0x01000018
+data_rs1: 0x00000009	data_rs2: 0xffffffee
+alu: 0x01000018
+ 
+time: 910	pc: 0x01000018	instr: 0x02c12783	lw	x15, 44(x2)
+data_rs1: 0xffffffc2	data_rs2: 0x0000000c
+alu: 0xffffffee
+ 
+time: 930	pc: 0x0100001c	instr: 0x00279793	slli	x15, x15, 0x2
+data_rs1: 0xffffffee	data_rs2: 0xffffffc2
+alu: 0xffffffb8
+ 
+time: 950	pc: 0x01000020	instr: 0x03010713	addi	x14, x2, 48
+data_rs1: 0xffffffc2	data_rs2: 0x00000010
+alu: 0xfffffff2
+ 
+time: 970	pc: 0x01000024	instr: 0x00f707b3	add	x15, x14, x15
+data_rs1: 0xfffffff2	data_rs2: 0xffffffb8
+alu: 0xffffffaa
+ 
+time: 990	pc: 0x01000028	instr: 0x02c12703	lw	x14, 44(x2)
+data_rs1: 0xffffffc2	data_rs2: 0x0000000c
+alu: 0xffffffee
+ 
+time: 1010	pc: 0x0100002c	instr: 0xfce7a823	sw	x14, -48(x15)
+data_rs1: 0xffffffaa	data_rs2: 0xffffffee
+alu: 0xffffff7a
+ 
+time: 1030	pc: 0x01000030	instr: 0x02c12783	lw	x15, 44(x2)
+data_rs1: 0xffffffc2	data_rs2: 0x0000000c
+alu: 0xffffffee
+ 
+time: 1050	pc: 0x01000034	instr: 0x00178793	addi	x15, x15, 1
+data_rs1: 0xffffffee	data_rs2: 0x00000001
+alu: 0xffffffef
+ 
+time: 1070	pc: 0x01000038	instr: 0x02f12623	sw	x15, 44(x2)
+data_rs1: 0xffffffc2	data_rs2: 0xffffffef
+alu: 0xffffffee
+ 
+time: 1090	pc: 0x0100003c	instr: 0x02c12703	lw	x14, 44(x2)
+data_rs1: 0xffffffc2	data_rs2: 0x0000000c
+alu: 0xffffffee
+ 
+time: 1110	pc: 0x01000040	instr: 0x00900793	addi	x15, x0, 9
+data_rs1: 0x00000000	data_rs2: 0x00000009
+alu: 0x00000009
+ 
+time: 1130	pc: 0x01000044	instr: 0xfce7dae3	bge	x15, x14, 0x01000018
+data_rs1: 0x00000009	data_rs2: 0xffffffee
+alu: 0x01000018
+ 
+time: 1150	pc: 0x01000018	instr: 0x02c12783	lw	x15, 44(x2)
+data_rs1: 0xffffffc2	data_rs2: 0x0000000c
+alu: 0xffffffee
+ 
+time: 1170	pc: 0x0100001c	instr: 0x00279793	slli	x15, x15, 0x2
+data_rs1: 0xffffffee	data_rs2: 0xffffffc2
+alu: 0xffffffb8
+ 
+time: 1190	pc: 0x01000020	instr: 0x03010713	addi	x14, x2, 48
+data_rs1: 0xffffffc2	data_rs2: 0x00000010
+alu: 0xfffffff2
+ 
+time: 1210	pc: 0x01000024	instr: 0x00f707b3	add	x15, x14, x15
+data_rs1: 0xfffffff2	data_rs2: 0xffffffb8
+alu: 0xffffffaa
+ 
+time: 1230	pc: 0x01000028	instr: 0x02c12703	lw	x14, 44(x2)
+data_rs1: 0xffffffc2	data_rs2: 0x0000000c
+alu: 0xffffffee
+ 
+time: 1250	pc: 0x0100002c	instr: 0xfce7a823	sw	x14, -48(x15)
+data_rs1: 0xffffffaa	data_rs2: 0xffffffee
+alu: 0xffffff7a
+ 
+time: 1270	pc: 0x01000030	instr: 0x02c12783	lw	x15, 44(x2)
+data_rs1: 0xffffffc2	data_rs2: 0x0000000c
+alu: 0xffffffee
+ 
+time: 1290	pc: 0x01000034	instr: 0x00178793	addi	x15, x15, 1
+data_rs1: 0xffffffee	data_rs2: 0x00000001
+alu: 0xffffffef
+ 
+time: 1310	pc: 0x01000038	instr: 0x02f12623	sw	x15, 44(x2)
+data_rs1: 0xffffffc2	data_rs2: 0xffffffef
+alu: 0xffffffee
+ 
+time: 1330	pc: 0x0100003c	instr: 0x02c12703	lw	x14, 44(x2)
+data_rs1: 0xffffffc2	data_rs2: 0x0000000c
+alu: 0xffffffee
+ 
+time: 1350	pc: 0x01000040	instr: 0x00900793	addi	x15, x0, 9
+data_rs1: 0x00000000	data_rs2: 0x00000009
+alu: 0x00000009
+ 
+time: 1370	pc: 0x01000044	instr: 0xfce7dae3	bge	x15, x14, 0x01000018
+data_rs1: 0x00000009	data_rs2: 0xffffffee
+alu: 0x01000018
+ 
+time: 1390	pc: 0x01000018	instr: 0x02c12783	lw	x15, 44(x2)
+data_rs1: 0xffffffc2	data_rs2: 0x0000000c
+alu: 0xffffffee
+ 
+time: 1410	pc: 0x0100001c	instr: 0x00279793	slli	x15, x15, 0x2
+data_rs1: 0xffffffee	data_rs2: 0xffffffc2
+alu: 0xffffffb8
+ 
+time: 1430	pc: 0x01000020	instr: 0x03010713	addi	x14, x2, 48
+data_rs1: 0xffffffc2	data_rs2: 0x00000010
+alu: 0xfffffff2
+ 
+time: 1450	pc: 0x01000024	instr: 0x00f707b3	add	x15, x14, x15
+data_rs1: 0xfffffff2	data_rs2: 0xffffffb8
+alu: 0xffffffaa
+ 
+time: 1470	pc: 0x01000028	instr: 0x02c12703	lw	x14, 44(x2)
+data_rs1: 0xffffffc2	data_rs2: 0x0000000c
+alu: 0xffffffee
+ 
+time: 1490	pc: 0x0100002c	instr: 0xfce7a823	sw	x14, -48(x15)
+data_rs1: 0xffffffaa	data_rs2: 0xffffffee
+alu: 0xffffff7a
+ 
+time: 1510	pc: 0x01000030	instr: 0x02c12783	lw	x15, 44(x2)
+data_rs1: 0xffffffc2	data_rs2: 0x0000000c
+alu: 0xffffffee
+ 
+time: 1530	pc: 0x01000034	instr: 0x00178793	addi	x15, x15, 1
+data_rs1: 0xffffffee	data_rs2: 0x00000001
+alu: 0xffffffef
+ 
+time: 1550	pc: 0x01000038	instr: 0x02f12623	sw	x15, 44(x2)
+data_rs1: 0xffffffc2	data_rs2: 0xffffffef
+alu: 0xffffffee

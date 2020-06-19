@@ -1,0 +1,84 @@
+$date
+	Mon May 18 21:53:20 2020
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module dut $end
+$scope module gate $end
+$var wire 1 ! x $end
+$var wire 1 " y $end
+$var wire 1 # z $end
+$upscope $end
+$upscope $end
+$scope module dut $end
+$scope module reg_gate $end
+$var wire 1 $ clock $end
+$var wire 1 # in $end
+$var wire 1 % reset $end
+$var reg 1 & out $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+x&
+1%
+1$
+x#
+x"
+x!
+$end
+#5
+0$
+#10
+0&
+1$
+#15
+0$
+#20
+0%
+0#
+1$
+0"
+0!
+#25
+0$
+#30
+1&
+1#
+1$
+1"
+1!
+#35
+0$
+#40
+0&
+0#
+1$
+0"
+#45
+0$
+#50
+1&
+1#
+1$
+1"
+#55
+0$
+#60
+0&
+0#
+1$
+0!
+#65
+0$
+#70
+1$
+#75
+0$
+#80
+1$

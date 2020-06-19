@@ -1,0 +1,66 @@
+WARNING: fetch-decode.v:58: $readmemh(../../rv32-benchmarks-master/simple-programs/SumArray.x): Not enough words in the file for the requested range [0:262143].
+VCD info: dumpfile fetch-decode-SumArray.vcd opened for output.
+VCD warning: ignoring signals in previously scanned scope dut.fet.mem.
+pc: 0x01000000	instr: 0xfc010113	addi	x2, x2, -64
+pc: 0x01000004	instr: 0x02112e23	sw	x1, 60(x2)
+pc: 0x01000008	instr: 0x02012623	sw	x0, 44(x2)
+pc: 0x0100000c	instr: 0x02012423	sw	x0, 40(x2)
+pc: 0x01000010	instr: 0x02012623	sw	x0, 44(x2)
+pc: 0x01000014	instr: 0x0280006f	jal	x0, 0x0100003c
+pc: 0x01000018	instr: 0x02c12783	lw	x15, 44(x2)
+pc: 0x0100001c	instr: 0x00279793	slli	x15, x15, 0x2
+pc: 0x01000020	instr: 0x03010713	addi	x14, x2, 48
+pc: 0x01000024	instr: 0x00f707b3	add	x15, x14, x15
+pc: 0x01000028	instr: 0x02c12703	lw	x14, 44(x2)
+pc: 0x0100002c	instr: 0xfce7a823	sw	x14, -48(x15)
+pc: 0x01000030	instr: 0x02c12783	lw	x15, 44(x2)
+pc: 0x01000034	instr: 0x00178793	addi	x15, x15, 1
+pc: 0x01000038	instr: 0x02f12623	sw	x15, 44(x2)
+pc: 0x0100003c	instr: 0x02c12703	lw	x14, 44(x2)
+pc: 0x01000040	instr: 0x00900793	addi	x15, x0, 9
+pc: 0x01000044	instr: 0xfce7dae3	bge	x15, x14, 0x01000018
+pc: 0x01000048	instr: 0x02012623	sw	x0, 44(x2)
+pc: 0x0100004c	instr: 0x0300006f	jal	x0, 0x0100007c
+pc: 0x01000050	instr: 0x02c12783	lw	x15, 44(x2)
+pc: 0x01000054	instr: 0x00279793	slli	x15, x15, 0x2
+pc: 0x01000058	instr: 0x03010713	addi	x14, x2, 48
+pc: 0x0100005c	instr: 0x00f707b3	add	x15, x14, x15
+pc: 0x01000060	instr: 0xfd07a783	lw	x15, -48(x15)
+pc: 0x01000064	instr: 0x02812703	lw	x14, 40(x2)
+pc: 0x01000068	instr: 0x00f707b3	add	x15, x14, x15
+pc: 0x0100006c	instr: 0x02f12423	sw	x15, 40(x2)
+pc: 0x01000070	instr: 0x02c12783	lw	x15, 44(x2)
+pc: 0x01000074	instr: 0x00178793	addi	x15, x15, 1
+pc: 0x01000078	instr: 0x02f12623	sw	x15, 44(x2)
+pc: 0x0100007c	instr: 0x02c12703	lw	x14, 44(x2)
+pc: 0x01000080	instr: 0x00900793	addi	x15, x0, 9
+pc: 0x01000084	instr: 0xfce7d6e3	bge	x15, x14, 0x01000050
+pc: 0x01000088	instr: 0x02812503	lw	x10, 40(x2)
+pc: 0x0100008c	instr: 0x018000ef	jal	x1, 0x010000a4
+pc: 0x01000090	instr: 0x00050793	addi	x15, x10, 0
+pc: 0x01000094	instr: 0x00078513	addi	x10, x15, 0
+pc: 0x01000098	instr: 0x03c12083	lw	x1, 60(x2)
+pc: 0x0100009c	instr: 0x04010113	addi	x2, x2, 64
+pc: 0x010000a0	instr: 0x00008067	jalr	x0, 0(x1)
+pc: 0x010000a4	instr: 0xfe010113	addi	x2, x2, -32
+pc: 0x010000a8	instr: 0x00112e23	sw	x1, 28(x2)
+pc: 0x010000ac	instr: 0x00a12623	sw	x10, 12(x2)
+pc: 0x010000b0	instr: 0x00c12703	lw	x14, 12(x2)
+pc: 0x010000b4	instr: 0x02d00793	addi	x15, x0, 45
+pc: 0x010000b8	instr: 0x00f71863	bne	x14, x15, 0x010000c8
+pc: 0x010000bc	instr: 0x024000ef	jal	x1, 0x010000e0
+pc: 0x010000c0	instr: 0x00050793	addi	x15, x10, 0
+pc: 0x010000c4	instr: 0x00c0006f	jal	x0, 0x010000d0
+pc: 0x010000c8	instr: 0x024000ef	jal	x1, 0x010000ec
+pc: 0x010000cc	instr: 0x00050793	addi	x15, x10, 0
+pc: 0x010000d0	instr: 0x00078513	addi	x10, x15, 0
+pc: 0x010000d4	instr: 0x01c12083	lw	x1, 28(x2)
+pc: 0x010000d8	instr: 0x02010113	addi	x2, x2, 32
+pc: 0x010000dc	instr: 0x00008067	jalr	x0, 0(x1)
+pc: 0x010000e0	instr: 0x00100793	addi	x15, x0, 1
+pc: 0x010000e4	instr: 0x00078513	addi	x10, x15, 0
+pc: 0x010000e8	instr: 0x00008067	jalr	x0, 0(x1)
+pc: 0x010000ec	instr: 0x00000793	addi	x15, x0, 0
+pc: 0x010000f0	instr: 0x00078513	addi	x10, x15, 0
+pc: 0x010000f4	instr: 0x00008067	jalr	x0, 0(x1)
+pc: 0x010000f8	instr: 0xxxxxxxxx	not instr
