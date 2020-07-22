@@ -6,6 +6,6 @@ case $1 in
         vvp pipeline
         ;;
     wave)   # wave
-        gtkwave pipeline-SimpleAdd.vcd
+        gtkwave dump.vcd
         ;;
 esac
